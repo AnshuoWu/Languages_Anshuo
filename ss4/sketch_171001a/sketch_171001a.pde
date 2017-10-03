@@ -20,7 +20,6 @@ textSize(32);
 //rect(450,330,30,30);
 //rect(500,330,40,90);
 
-
 if (mouseX>240 && mouseX<300 && mouseY>220&&mouseY<280){
   img = loadImage("wob.jpg");
    text("Don't touch me",25,70);
