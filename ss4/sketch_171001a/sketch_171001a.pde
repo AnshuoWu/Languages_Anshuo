@@ -30,9 +30,10 @@ if (mouseX>240 && mouseX<300 && mouseY>220&&mouseY<280){
 }else if (mouseX>420 && mouseX<480 && mouseY>300&&mouseY<360){
   img = loadImage("wod.jpg");
     text("I love you",25,70);
-}else if (mouseX>470 && mouseX<540 && mouseY>240&&mouseY<420){
+}else if (mouseX>470 && mouseX<540 && mouseY>350&&mouseY<420){
    img = loadImage("woe.jpg");
     text("Fuck off!!!",25,70);
-} else {text("What's up",25,70);
+} else { img = loadImage("woa.jpg");
+  text("What's up",25,70);
 }
 } 
