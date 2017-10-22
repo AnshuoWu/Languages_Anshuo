@@ -26,9 +26,72 @@ void setup(){
   }else if(index == "book"){
       if (mouseX>100 && mouseX<520 && mouseY>70 &&mouseY<360){
       index= "study";
-      } else if (mouseX>750 && mouseX<830 && mouseY>170&&mouseY<280){
+      } else if (mouseX>630 && mouseX<980 && mouseY>30&&mouseY<330){
       index= "fall in love";
       }
+//4 1 1     
+ }else if(index == "study"){
+      if (mouseX>50 && mouseX<400 && mouseY>70 &&mouseY<360){
+      index= "keep trying";
+      } else if (mouseX>630 && mouseX<980 && mouseY>30&&mouseY<390){
+      index= "no girl likes you";
+      }
+//4 1 2     
+ }else if(index == "fall in love"){
+      if (mouseX>50 && mouseX<400 && mouseY>70 &&mouseY<500){
+      index= "study together";
+      } else if (mouseX>630 && mouseX<980 && mouseY>30&&mouseY<500){
+      index= "disco";
+      }         
+      
+//4 2      
+    }else if(index == "pen"){
+      if (mouseX>100 && mouseX<420 && mouseY>70 &&mouseY<360){
+      index= "fine art";
+      }else if (mouseX>600 && mouseX<950 && mouseY>170&&mouseY<380){
+      index= "digital art";
+      }
+     
+ //4 2 1     
+ }else if(index == "fine art"){
+      if (mouseX>50 && mouseX<450 && mouseY>70 &&mouseY<700){
+      index= "artist";
+      } else if (mouseX>550 && mouseX<980 && mouseY>30&&mouseY<550){
+      index= "mad man";
+      }   
+      
+//4 2 2     
+ }else if(index == "digital art"){
+      if (mouseX>50 && mouseX<450 && mouseY>70 &&mouseY<700){
+      index= "processing";
+      } else if (mouseX>550 && mouseX<980 && mouseY>30&&mouseY<550){
+      index= "comic";
+      }   
+      
+//4 3 
+}else if(index == "knife"){
+      if (mouseX>150 && mouseX<400 && mouseY>70 &&mouseY<330){
+      index= "lost";
+      }else if (mouseX>650 && mouseX<980 && mouseY>170&&mouseY<280){
+      index= "win";
+      }
+      
+ //4 3 1     
+ }else if(index == "lost"){
+      if (mouseX>50 && mouseX<450 && mouseY>70 &&mouseY<700){
+      index= "depressing";
+      } else if (mouseX>550 && mouseX<980 && mouseY>30&&mouseY<550){
+      index= "begin to study";
+      }   
+      
+//4 3 2     
+ }else if(index == "win"){
+      if (mouseX>50 && mouseX<450 && mouseY>70 &&mouseY<700){
+      index= "accoplice";
+      } else if (mouseX>550 && mouseX<980 && mouseY>30&&mouseY<550){
+      index= "gangleader";
+      }   
+      
   }
  }
  
@@ -52,7 +115,55 @@ void draw()
       img = loadImage("choice1 1 1.jpg");
       break;
     case "fall in love":
-      img = loadImage("choice1 1 2.jpg"); 
+      img = loadImage("choice1 1 2.jpg");
+      break;
+    case "fine art":
+      img = loadImage("choice1 2 1.jpg"); 
+       break;
+    case "digital art":
+      img = loadImage("choice1 2 2.jpg");
+       break;
+    case "lost":
+      img = loadImage("choice1 3 1.jpg");
+       break;
+       case "win":
+      img = loadImage("choice1 3 2.jpg");
+      break;
+    case "keep trying":
+      img = loadImage("choice1 1 1 1.jpg");
+      break;
+    case "no girl likes you":
+      img = loadImage("choice1 1 1 2.jpg");
+       break;
+    case "study together":
+      img = loadImage("choice1 1 2 1.jpg");
+      break;
+    case "disco":
+      img = loadImage("choice1 1 2 2.jpg");
+       break;
+    case "artist":
+      img = loadImage("choice1 2 1 1.jpg");
+      break;
+    case "mad man":
+      img = loadImage("choice1 2 1 2.jpg");
+       break;
+    case "processing":
+      img = loadImage("choice1 2 2 1.jpg");
+      break;
+    case "comic":
+      img = loadImage("choice1 2 2 2.jpg");
+       break;
+    case "depressing":
+      img = loadImage("choice1 3 1 1.jpg");
+      break;
+    case "begin to study":
+      img = loadImage("choice1 3 1 2.jpg");
+       break;
+    case "accoplice":
+      img = loadImage("choice1 3 2 1.jpg");
+      break;
+    case "gangleader":
+      img = loadImage("choice1 3 2 2.jpg");
  
   }
   image(img, 0, 0);
