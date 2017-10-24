@@ -1,6 +1,11 @@
-//Anshuo Wu. Your adventure. Your life is in your hand. Please make a good choice.  
+//Anshuo Wu. Your adventure. Your life is in your hand. Please make a good choice.
+//If you click on the lower right corner in the selection process,
+//we'll go back to the first choice 
 PImage img;
 String index= "";
+float r= 255;
+float g= 255;
+float b= 255;
 void setup(){
   size(1080,720);
   img=loadImage("baby1.jpg");
@@ -88,15 +93,15 @@ void setup(){
  }else if(index == "win"){
       if (mouseX>50 && mouseX<450 && mouseY>70 &&mouseY<700){
       index= "accoplice";
-      } else if (mouseX>550 && mouseX<980 && mouseY>30&&mouseY<550){
+      } else if (mouseX>550 && mouseX<980 && mouseY>30&&mouseY<550){}
       index= "gangleader";
-      }   
       
-  }
+ }  
  }
  
 void draw()
-{ 
+{
+  
   //Conditionals
   switch(index){
     case "start":
@@ -164,8 +169,44 @@ void draw()
       break;
     case "gangleader":
       img = loadImage("choice1 3 2 2.jpg");
+      
  
   }
   image(img, 0, 0);
+  noStroke();
+     fill(random(100,255),random(185,94),random(250,120),80);
+   ellipse(940,600, 200, 200);
+ noStroke();
+    fill(r,g,b, 30);
+    rect(0, 0, 1080, 720);
+//background ball
+  ball(100,100,80);
+  ball(700,600,120);
+  ball(1000,300,150);
+  ball(870,200,60);
+  ball(300,400,100);
+  ball(50,700,100);
+  ball(50,500,170);
+  ball(500,30,100);
+  ball(-100,-30,100);
+  ball(200,-80,100);
 }
-//+ random function
+//Functions
+void ball(int x, int y, int diameter){
+  fill(r, g, b,50);
+  ellipse(x+r, y+g, diameter,diameter);
+   fill(r, g, b,20);
+  ellipse(x+r, y+g, diameter-20,diameter-20);
+   fill(r, g, b,20);
+  ellipse(x+r, y+g, diameter-40,diameter-40);
+  fill(r, g, b,20);
+  ellipse(x+r, y+g, diameter-60,diameter-60);
+   fill(r, g, b,20);
+  ellipse(x+r, y+g, diameter-80,diameter-80);
+}
+  
+void mouseClicked() {
+  r= random (0, 255);  
+  g= random (0, 255);
+  b= random (0, 255);
+}
