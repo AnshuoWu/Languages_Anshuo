@@ -1,6 +1,10 @@
 //Anshuo Wu. Your adventure. Your life is in your hand. Please make a good choice.
 //If you click on the lower right corner in the selection process,
 //we'll go back to the first choice 
+import
+ddf.minim.*; 
+Minim minim;  
+AudioPlayer player;
 PImage img;
 String index= "";
 float r= 255;
@@ -9,6 +13,8 @@ float b= 255;
 void setup(){
   size(1080,720);
   img=loadImage("baby1.jpg");
+  minim = new Minim(this);
+  player = minim.loadFile("2 carz.mp3");
 }
 
  
@@ -93,14 +99,14 @@ void setup(){
  }else if(index == "win"){
       if (mouseX>50 && mouseX<450 && mouseY>70 &&mouseY<700){
       index= "accoplice";
-      } else if (mouseX>550 && mouseX<980 && mouseY>30&&mouseY<550){}
+      } else if (mouseX>550 && mouseX<980 && mouseY>30&&mouseY<550){
       index= "gangleader";
       
- }  
+ } }
  }
  
 void draw()
-{
+{ player.play();
   
   //Conditionals
   switch(index){
@@ -174,7 +180,7 @@ void draw()
   }
   image(img, 0, 0);
   noStroke();
-     fill(random(100,255),random(185,94),random(250,120),80);
+     fill(g,b,r,10);
    ellipse(940,600, 200, 200);
  noStroke();
     fill(r,g,b, 30);
