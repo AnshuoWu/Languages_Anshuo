@@ -9,7 +9,7 @@ int state=0;
 int state1=0;
 int speed=3;
 void setup(){
-size(1080,720);
+size(1280,720);
 for (int i = 0; i<images.length;i++) {
   images[i]=loadImage("eat"+i+".jpg");
 }
