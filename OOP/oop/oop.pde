@@ -1,9 +1,9 @@
- Lollipop[] Lollipops=new Lollipop[20];
+ Lollipop[] Lollipops=new Lollipop[200];
  void setup(){
-   size(720, 720, P2D);
+   size(720, 720);
   smooth();
   for(int i=0; i<Lollipops.length;i++){
-   Lollipops[i]=new Lollipop(100); 
+   Lollipops[i]=new Lollipop(); 
   }
  }
 
