@@ -50,6 +50,6 @@ void draw(){
   }
 }
 void mousePressed(){ fill(random(64,286),8,random(173,255));
-  rect(0, 0, 1080, 720);
+  rect(0, 0, 1280, 720);
   imageIndex=(imageIndex+1)%images.length;
 }
