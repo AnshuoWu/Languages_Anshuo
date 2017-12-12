@@ -21,6 +21,15 @@ PImage img_kaitou2;
 PImage img_kaichang1;
 PImage img_kaichang2;
 PImage img_diaoluo;
+PImage img_panduola;
+PImage img_panduola2;
+PImage img_laoshenxian;
+PImage img_laoshenxian2;
+PImage img_shibei;
+PImage img_shibei2;
+PImage img_oldman;
+PImage img_pandora;
+PImage img_shibanhua;
 
 PImage img_hezi;
 PImage img_click;
@@ -42,7 +51,7 @@ int state1=0;
 int speed=3;
 
 PImage img_paizi;
-
+PImage img_panduolajia;
 PImage img_anjian;
 PImage img_anjian2;
 PImage img_redaiyulin;
@@ -116,6 +125,17 @@ img_guancai3=loadImage("guancai3.png");
 img_anjian=loadImage("anjian.png");
 img_anjian2=loadImage("anjian2.png");
 img_paizi=loadImage("paizi.png");
+img_panduolajia=loadImage("panduolajia.png");
+img_panduola=loadImage("panduola.png");
+img_panduola2=loadImage("panduola2.png");
+img_laoshenxian=loadImage("laoshenxian.png");
+img_laoshenxian2=loadImage("laoshenxian2.png");
+img_shibei=loadImage("shibei.png");
+img_shibei2=loadImage("shibei2.png");
+img_oldman=loadImage("oldman.png");
+img_pandora=loadImage("pandora.png");
+img_shibanhua=loadImage("shibanhua.png");
+
 
 minim = new Minim(this);
  player = minim.loadFile("123.mp3");
@@ -223,6 +243,18 @@ image(img_guancai3,0,0);
  {
  image(img_hezi,0,0);
  }
+ if (start == "start10")
+ {
+  image(img_oldman, 0, 0);
+}
+ if (start == "start11")
+ {
+  image(img_pandora, 0, 0);
+}
+ if (start == "start12")
+ {
+  image(img_shibanhua, 0, 0);
+}
  if (start == "start7")
  {
  image(img_zuizhongchangjing,0,0);
@@ -267,12 +299,36 @@ image(cloud1,cloud1move,0);
       state1 = 0;
    
   }
-
 }
-   }if (start == "start8")
+ }if (start == "start8")
    {
     image(img_end,0,0);
    }
+   if (start == "start9") {
+  image(img_panduolajia, 0, 0);
+  image(images[imageIndex],0,0); 
+ imageIndex=(imageIndex+1)%images.length;
+ image(img_anjian3,0,0);
+ if (mouseX>70 && mouseX<360 && mouseY>20&&mouseY<200){
+ image(img_anjian4,0,0); 
+ }
+  image(img_anjian,0,0);
+if (mouseX>1720 && mouseX<1860 && mouseY>30&&mouseY<180){
+image(img_anjian2,0,0); 
+}  
+ image(img_panduola,0,0);
+ if (mouseX>1500 && mouseX<1750 && mouseY>250&&mouseY<700){
+image(img_panduola2,0,0); 
+} 
+image(img_laoshenxian,0,0);
+if (mouseX>130 && mouseX<600 && mouseY>360&&mouseY<730){
+image(img_laoshenxian2,0,0); 
+} 
+image(img_shibei,0,0); 
+if (mouseX>1030 && mouseX<1650 && mouseY>870&&mouseY<1020){
+image(img_shibei2,0,0); 
+} 
+}
 }
 
 
@@ -302,7 +358,7 @@ else if (start=="start4" && mouseX>1600 && mouseX<1880 && mouseY>470&&mouseY<100
 } 
 else if (start=="start4" && mouseX>1720 && mouseX<1860 && mouseY>30&&mouseY<180)
  {
-   start="start7";
+   start="start9";
 } 
 else if (start=="start5" && mouseX>1670 && mouseX<1740 && mouseY>740&&mouseY<860)
  {
@@ -314,7 +370,7 @@ else if (start=="start6" )
 } 
 else if (start=="start7" && mouseX>70 && mouseX<360 && mouseY>20&&mouseY<200)
  {
-   start="start4";
+   start="start9";
 } 
 else if (start=="start7" && mouseX>600 && mouseX<820 && mouseY>550&&mouseY<900)
  {
@@ -323,6 +379,38 @@ else if (start=="start7" && mouseX>600 && mouseX<820 && mouseY>550&&mouseY<900)
 else if (start=="start8")
  {
    start="start";
+} 
+else if (start=="start9" && mouseX>1720 && mouseX<1860 && mouseY>30&&mouseY<180)
+ {
+   start="start7";
+} 
+else if (start=="start9" && mouseX>70 && mouseX<360 && mouseY>20&&mouseY<200)
+ {
+   start="start4";
+}
+else if (start=="start9" && mouseX>130 && mouseX<600 && mouseY>360&&mouseY<730)
+ {
+   start="start10";
+} 
+else if (start=="start10")
+ {
+   start="start9";
+} 
+else if (start=="start9" && mouseX>1500 && mouseX<1750 && mouseY>250&&mouseY<700)
+ {
+   start="start11";
+} 
+else if (start=="start11")
+ {
+   start="start9";
+} 
+else if (start=="start9" && mouseX>1030 && mouseX<1650 && mouseY>870&&mouseY<1020)
+ {
+   start="start12";
+} 
+else if (start=="start12")
+ {
+   start="start9";
 } 
 }
 
