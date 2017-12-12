@@ -1,3 +1,4 @@
+//This is a story. Click your mouse and play it.
 import
 ddf.minim.*; 
 Minim minim;  
