@@ -3,16 +3,15 @@ import
 ddf.minim.*; 
 Minim minim;  
 AudioPlayer player;
-
 int maxImages=138;
 int imageIndex=0;
 PImage[] images = new PImage[maxImages];
 int maxImagesmao=6;
 int imagemaoIndex=0;
 PImage[] imagesmao = new PImage[maxImagesmao];
-
-
-
+int maxImagesmanhua=6;
+int imagemanhuaIndex=0;
+PImage[] imagesmanhua = new PImage[maxImagesmanhua];
 int Sum= 1000;
 int Sum1=500;
 ball[]balls=new ball[Sum];
@@ -31,7 +30,10 @@ PImage img_shibei2;
 PImage img_oldman;
 PImage img_pandora;
 PImage img_shibanhua;
-
+PImage img_gushi;
+PImage img_gushi2;
+PImage img_keyboard;
+PImage img_killdragon;
 PImage img_hezi;
 PImage img_click;
 PImage img_zuizhongchangjing;
@@ -42,7 +44,6 @@ PImage img_anjian4;
 PImage img_jian;
 PImage img_jian2;
 PImage img_end;
-
 PImage cloud1;
 PImage cloud2;
 int cloud1move=0;
@@ -50,7 +51,6 @@ int cloud2move=0;
 int state=0;
 int state1=0;
 int speed=3;
-
 PImage img_paizi;
 PImage img_panduolajia;
 PImage img_anjian;
@@ -78,15 +78,22 @@ String start = "start";
 void setup(){
   size(1920,1080);
   smooth();
-  for(int i=0; i<Sum; i++){
-   balls[i]=new ball(); }
-   for(int i=0; i<Sum1; i++){
-   ball2s[i]=new ball2(); }
- for (int i = 0; i<images.length;i++) {
+  for(int i=0; i<Sum; i++)
+{
+  balls[i]=new ball(); }
+  for(int i=0; i<Sum1; i++){
+  ball2s[i]=new ball2(); }
+  for (int i = 0; i<images.length;i++)
+{
   images[i]=loadImage("zoulu"+i+".png");
 } 
-  for (int i = 0; i<imagesmao.length;i++) {
+  for (int i = 0; i<imagesmao.length;i++) 
+{
   imagesmao[i]=loadImage("mao"+i+".png");
+}
+  for (int i = 0; i<imagesmanhua.length;i++) 
+{
+  imagesmanhua[i]=loadImage("manhua"+i+".png");
 }
 cloud1=loadImage("cloud1.png");
 cloud2=loadImage("cloud2.png");  
@@ -136,87 +143,103 @@ img_shibei2=loadImage("shibei2.png");
 img_oldman=loadImage("oldman.png");
 img_pandora=loadImage("pandora.png");
 img_shibanhua=loadImage("shibanhua.png");
-
+img_gushi=loadImage("gushi.png");
+img_gushi2=loadImage("gushi2.png");
+img_keyboard=loadImage("keyboard.png");
+img_killdragon=loadImage("killdragon.png");
 
 minim = new Minim(this);
- player = minim.loadFile("123.mp3");
+player = minim.loadFile("123.mp3");
 }
 void draw()
 {player.play();
   
   if (start == "start") {
-    image(img_kaitou1, 0, 0);
-  }
+  image(img_kaitou1, 0, 0);
+}
   if(start == "start" && mouseX>680 && mouseX<1380 && mouseY>850&&mouseY<1000){
-image(img_kaitou2,0,0);
+  image(img_kaitou2,0,0);
 }
- if (start == "start2") {
-   image(img_kaichang1, 0, 0);
- }  
- if (start == "start2" && mouseX>1510 && mouseX<1650 && mouseY>700&&mouseY<820){
-image(img_kaichang2,0,0);
+  if (start == "start2") 
+{
+  image(img_kaichang1, 0, 0);
+}  
+  if (start == "start2" && mouseX>1510 && mouseX<1650 && mouseY>700&&mouseY<820){
+  image(img_kaichang2,0,0);
 }
-if (start == "start3" ){
-image(img_diaoluo,0,0);
+  if (start == "start3" ){
+  image(img_diaoluo,0,0);
 }
-  if (start == "start4") {
-background(211,255,241);
-  
-image(img_redaiyulin,0,0);
+  if (start == "start4") 
+{
+  background(211,255,241); 
+  image(img_redaiyulin,0,0);
 
-for(int i=0; i<Sum;i++){
+  for(int i=0; i<Sum;i++)
+{
   balls[i].jump();
   balls[i].display();
-  } 
-  for(int i=0; i<Sum1;i++){
+} 
+  for(int i=0; i<Sum1;i++)
+{
   ball2s[i].jump();
   ball2s[i].display();
-  } 
-
-image(img_cao,0,0);
-image(img_yuanrenweiba,0,0);
-if (mouseX>550 && mouseX<600 && mouseY>330&&mouseY<400){
-image(img_yuanrenweiba2,0,0);
-}
-if (mouseX>550 && mouseX<600 && mouseY>330&&mouseY<400&& mousePressed){
-image(img_yuanrenweiba,0,0);
-image(img_yuanren,0,0);
-}
-image(img_di,0,0);
-image(img_shu,0,0);
-image(imagesmao[imagemaoIndex],0,0); 
-image(img_paizi,0,0);
-image(img_she,0,0);
-if (mouseX>180 && mouseX<300 && mouseY>800&&mouseY<850){
-image(img_she2,0,0);
-}
-if (mouseX>180 && mouseX<300 && mouseY>800&&mouseY<850 && mousePressed){
-image(img_sheloutou,0,0);
-}
-image(img_shendeng,0,0);
-if (mouseX>1500 && mouseX<1610 && mouseY>530&&mouseY<610){
-image(img_shendeng2,0,0);
-}
-if (mouseX>1500 && mouseX<1600 && mouseY>530&&mouseY<630&& mousePressed){
-image(img_shendengdengshen,0,0); 
-}  
-image(img_baoxiangguan,0,0);
-if (mouseX>1050 && mouseX<1280 && mouseY>480&&mouseY<650){
-image(img_baoxiangguan2,0,0); 
-}  
-if (mouseX>1050 && mouseX<1280 && mouseY>480&&mouseY<650&& mousePressed){
-image(img_baoxiangkai,0,0); 
 } 
-image(img_guancai1,0,0);
-if (mouseX>1600 && mouseX<1880 && mouseY>470&&mouseY<1000){
-image(img_guancai2,0,0); 
+
+  image(img_cao,0,0);
+  image(img_yuanrenweiba,0,0);
+  if (mouseX>550 && mouseX<600 && mouseY>330&&mouseY<400)
+{
+  image(img_yuanrenweiba2,0,0);
+}
+  if (mouseX>550 && mouseX<600 && mouseY>330&&mouseY<400&& mousePressed)
+{
+  image(img_yuanrenweiba,0,0);
+  image(img_yuanren,0,0);
+}
+  image(img_di,0,0);
+  image(img_shu,0,0);
+  image(imagesmao[imagemaoIndex],0,0); 
+  image(img_paizi,0,0);
+  image(img_she,0,0);
+  if (mouseX>180 && mouseX<300 && mouseY>800&&mouseY<850)
+{
+  image(img_she2,0,0);
+}
+  if (mouseX>180 && mouseX<300 && mouseY>800&&mouseY<850 && mousePressed)
+{
+  image(img_sheloutou,0,0);
+}
+  image(img_shendeng,0,0);
+  if (mouseX>1500 && mouseX<1610 && mouseY>530&&mouseY<610)
+{
+  image(img_shendeng2,0,0);
+}
+  if (mouseX>1500 && mouseX<1600 && mouseY>530&&mouseY<630&& mousePressed)
+{
+  image(img_shendengdengshen,0,0); 
 }  
-image(img_anjian,0,0);
-if (mouseX>1720 && mouseX<1860 && mouseY>30&&mouseY<180){
-image(img_anjian2,0,0); 
+  image(img_baoxiangguan,0,0);
+  if (mouseX>1050 && mouseX<1280 && mouseY>480&&mouseY<650)
+{
+  image(img_baoxiangguan2,0,0); 
 }  
-image(images[imageIndex],0,0); 
-imageIndex=(imageIndex+1)%images.length;
+  if (mouseX>1050 && mouseX<1280 && mouseY>480&&mouseY<650&& mousePressed)
+{
+  image(img_baoxiangkai,0,0); 
+} 
+  image(img_guancai1,0,0);
+  if (mouseX>1600 && mouseX<1880 && mouseY>470&&mouseY<1000)
+{
+  image(img_guancai2,0,0); 
+}  
+  image(img_anjian,0,0);
+  if (mouseX>1720 && mouseX<1860 && mouseY>30&&mouseY<180)
+{
+  image(img_anjian2,0,0); 
+}  
+  image(images[imageIndex],0,0); 
+  imageIndex=(imageIndex+1)%images.length;
 }
 
 //fill(0);
@@ -228,61 +251,71 @@ imageIndex=(imageIndex+1)%images.length;
 //kaichang ellipse(1550, 750, 50, 50); 
 //mao ellipse(300, 550, 50, 50); 
 //guancai ellipse(1600, 1000, 50, 50); 
-
- if (start == "start5") {
-background(211,255,241);  
-image(img_redaiyulin,0,0);
-image(img_cao,0,0);
-image(img_yuanrenweiba,0,0);
-image(img_di,0,0);
-image(img_shu,0,0);
-image(img_she,0,0);
-image(img_shendeng,0,0);
-image(img_guancai3,0,0); 
+  if (start == "start5") 
+{
+  background(211,255,241);  
+  image(img_redaiyulin,0,0);
+  image(img_cao,0,0);
+  image(img_yuanrenweiba,0,0);
+  image(img_di,0,0);
+  image(img_shu,0,0);
+  image(img_she,0,0);
+  image(img_shendeng,0,0);
+  image(img_guancai3,0,0); 
 }  
- if (start == "start6")
- {
- image(img_hezi,0,0);
- }
- if (start == "start10")
- {
+  if (start == "start6")
+{
+  image(img_hezi,0,0);
+}
+  if (start == "start10")
+{
   image(img_oldman, 0, 0);
 }
- if (start == "start11")
- {
+  if (start == "start11")
+{
   image(img_pandora, 0, 0);
 }
  if (start == "start12")
- {
+{
   image(img_shibanhua, 0, 0);
 }
- if (start == "start7")
- {
- image(img_zuizhongchangjing,0,0);
- image(img_zuizhongchangjing2,0,0);
- image(img_jian,0,0);
+  if (start == "start13")
+{
+  image(imagesmanhua[imagemanhuaIndex],0,0); 
+  image(img_keyboard, 0, 0);
+}
+  if (start == "start7")
+{
+  image(img_zuizhongchangjing,0,0);
+  image(img_zuizhongchangjing2,0,0);
+  image(img_jian,0,0);
   if (mouseX>600 && mouseX<820 && mouseY>550&&mouseY<900){
-image(img_jian2,0,0); 
- }
- image(images[imageIndex],-300,0); 
- imageIndex=(imageIndex+1)%images.length;
- image(img_long,0,0);
- image(img_anjian3,0,0);
- if (mouseX>70 && mouseX<360 && mouseY>20&&mouseY<200){
-image(img_anjian4,0,0); 
- }
-image(cloud1,cloud1move,0);
-   if(state==0){ 
-   cloud1move=cloud1move+speed;
-   if(cloud1move>width){
-     cloud1move=width;
-     state=1;
-    }
-    }else if (state == 1) {
-    cloud1move = cloud1move + speed*-1;
-    if (cloud1move<50) {
-      cloud1move=50;
-      state = 0;
+  image(img_jian2,0,0); 
+}
+  image(images[imageIndex],-300,0); 
+  imageIndex=(imageIndex+1)%images.length;
+  image(img_long,0,0);
+  image(img_anjian3,0,0);
+  if (mouseX>70 && mouseX<360 && mouseY>20&&mouseY<200){
+  image(img_anjian4,0,0); 
+}
+  image(cloud1,cloud1move,0);
+  if(state==0)
+{ 
+  cloud1move=cloud1move+speed;
+  if(cloud1move>width)
+{
+  cloud1move=width;
+  state=1;
+}
+}
+  else if (state == 1) 
+{
+  cloud1move = cloud1move + speed*-1;
+  if (cloud1move<50) 
+{
+  cloud1move=50;
+  state = 0;
 }
 }
   
@@ -301,12 +334,21 @@ image(cloud1,cloud1move,0);
    
   }
 }
- }if (start == "start8")
+ }
+  if (start == "start8")
+   {
+    image(img_killdragon,0,0);
+   }
+   if (start == "start14")
    {
     image(img_end,0,0);
    }
    if (start == "start9") {
   image(img_panduolajia, 0, 0);
+  image(img_gushi,0,0); 
+if (mouseX>1040 && mouseX<1120 && mouseY>410&&mouseY<760){
+image(img_gushi2,0,0); 
+}
   image(images[imageIndex],0,0); 
  imageIndex=(imageIndex+1)%images.length;
  image(img_anjian3,0,0);
@@ -327,7 +369,7 @@ image(img_laoshenxian2,0,0);
 } 
 image(img_shibei,0,0); 
 if (mouseX>1030 && mouseX<1650 && mouseY>870&&mouseY<1020){
-image(img_shibei2,0,0); 
+image(img_shibei2,0,0);  
 } 
 }
 }
@@ -379,7 +421,7 @@ else if (start=="start7" && mouseX>600 && mouseX<820 && mouseY>550&&mouseY<900)
 }
 else if (start=="start8")
  {
-   start="start";
+   start="start14";
 } 
 else if (start=="start9" && mouseX>1720 && mouseX<1860 && mouseY>30&&mouseY<180)
  {
@@ -413,6 +455,24 @@ else if (start=="start12")
  {
    start="start9";
 } 
+else if (start=="start9" && mouseX>1040 && mouseX<1120 && mouseY>410&&mouseY<760)
+ {
+   start="start13";
+} 
+else if (start=="start13")
+ {
+imagemanhuaIndex=(imagemanhuaIndex+1)%imagesmanhua.length;   
+}  
+else if (start=="start14")
+ {
+   start="start";
+} 
+}
+void keyPressed() {
+  if (start=="start13")
+   {
+   start="start9"; 
+}  
 }
 
   
